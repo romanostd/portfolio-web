@@ -18,7 +18,10 @@
     "@angular/platform-browser": "~13.0.0-next.0",
     "@angular/platform-browser-dynamic": "~13.0.0-next.0",
     "@angular/router": "~13.0.0-next.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
     "rxjs": "~7.4.0",
+    "tailwindcss": "^2.2.19",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
