@@ -1,1 +1,29 @@
 @import "../styles.scss";
+
+.font-poppins {
+  font-family: "Poppins";
+}
+
+.bg-linear-gradient {
+  background: linear-gradient(to right, $color-linear-gradient);
+}
+
+.projects-card {
+  border-radius: 50px 0px;
+  background-color: $color-dark-blue;
+  box-shadow: 0px 0px 12px 0px #fff;
+}
+
+.main-button {
+  border-radius: 83px;
+  background: linear-gradient(to right, $color-linear-gradient);
+  color: $color-white;
+}
+
+.project-title-border {
+    background-image: linear-gradient(to right, $color-linear-gradient);
+}
+
+.border-radius {
+    border-radius: 8px;
+}
