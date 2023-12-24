@@ -1,14 +1,12 @@
-<div class="font-poppins">
+<div class="font-poppins overflow-x-hidden">
   <header
     class="container mx-auto flex items-center justify-between py-4 border-b border-gray-700"
   >
     <div class="flex items-center">
-      <!-- <img src="path-to-your-logo.png" alt="Logo" class="h-8 mr-3"> -->
       <span class="text-white font-semibold text-lg">Portfolio</span>
     </div>
 
     <nav class="hidden md:flex space-x-4">
-      <!-- Navegação -->
       <a href="#" class="text-white hover:text-blue-500">Projects</a>
       <a href="#" class="text-white hover:text-blue-500">Technologies</a>
       <a href="#" class="text-white hover:text-blue-500">About me</a>
@@ -19,9 +17,33 @@
     </div>
   </header>
 
-  <!-- Projects Section -->
-  <section class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl text-white font-bold mb-8">Projects</h2>
+  <section class="relative container mx-auto px-4 pt-60">
+    <div class="flex justify-between">
+      <div>
+        <h2 class="text-3xl text-white font-bold mb-8">
+          Lorem ipsum dolor sit amet
+        </h2>
+        <div class="py-4 text-white max-w-[850px] mx-auto text-3xl color-pink">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+        
+        <div>
+          <button class="main-button w-40 h-12">Let's begin</button>
+        </div>
+      </div>
+      <img
+        src="../assets/drawing.svg"
+        alt="Pattern"
+        class="absolute right-36 top-96 transform translate-x-1/2 -translate-y-1/2"
+      />
+    
+    </div>
+  </section>
+  <section class="container mx-auto px-4 py-20">
+    <h2 class="text-3xl text-white font-bold mb-20">Projects</h2>
 
     <div class="grid md:grid-cols-2 gap-40 px-28">
       <div class="projects-card p-4">
@@ -41,7 +63,9 @@
           <p class="my-5 text-white font-semibold">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit...
           </p>
-          <button class="main-button w-52 h-14 font-semibold">Look it up</button>
+          <button class="main-button w-52 h-14 font-semibold">
+            Look it up
+          </button>
         </div>
       </div>
 
@@ -66,7 +90,7 @@
         </div>
       </div>
 
-      <div class="projects-card p-4">
+      <div class="projects-card p-4 z-50">
         <div class="p-6">
           <img
             class="border-radius"
@@ -74,7 +98,7 @@
             alt="Project 1"
           />
         </div>
-        <div class="p-6">
+        <div class="p-6 ">
           <h3 class="text-center text-white text-3xl font-semibold">
             PROJECT 1
           </h3>
@@ -109,13 +133,15 @@
       </div>
     </div>
   </section>
-
-  <!-- Technologies Section -->
   <section class="container mx-auto px-4 py-8">
     <h2 class="text-3xl text-white font-bold mb-8">Technologies</h2>
     <div class="space-y-4">
       <div>
-        <div class="text-white">HTML</div>
+        <div class="flex justify-between">
+          <div class="text-white">HTML</div>
+          <div class="text-white">Advanced</div>
+        </div>
+
         <div class="bg-gray-700 rounded-full h-2.5 dark:bg-gray-700">
           <div
             class="bg-linear-gradient h-2.5 rounded-full"
@@ -125,9 +151,9 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
   <footer class="text-center py-4">
-    <p class="text-gray-400">&copy; 2023 Romano M. Stedile. All Rights Reserved.</p>
+    <p class="text-gray-400">
+      &copy; 2023 Romano M. Stedile. All Rights Reserved.
+    </p>
   </footer>
 </div>

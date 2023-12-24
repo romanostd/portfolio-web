@@ -11,6 +11,7 @@
 .projects-card {
   border-radius: 50px 0px;
   background-color: $color-dark-blue;
+  z-index: 1000;
   box-shadow: 0px 0px 12px 0px #fff;
 }
 

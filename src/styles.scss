@@ -8,6 +8,10 @@ $color-linear-gradient: #13ADC7, #6978D1, #945DD6;
 $color-light-pink: #BCBCBC;
 $color-white: #ffff;
 
+.color-pink {
+  color: $color-light-pink;
+}
+
 .color-white {
   background-color: $color-light-pink;
 }
