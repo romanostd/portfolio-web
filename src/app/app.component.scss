@@ -8,6 +8,10 @@
   background: linear-gradient(to right, $color-linear-gradient);
 }
 
+.color-linear-gradient {
+  color: linear-gradient(to right, $color-linear-gradient);
+}
+
 .projects-card {
   border-radius: 50px 0px;
   background-color: $color-dark-blue;
@@ -22,9 +26,109 @@
 }
 
 .project-title-border {
-    background-image: linear-gradient(to right, $color-linear-gradient);
 }
 
 .border-radius {
     border-radius: 8px;
 }
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, $color-linear-gradient);
+
+  transition: width 0.5s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+
+.timeline-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  .timeline-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1rem;
+    z-index: 10;
+
+    &.prev { left: 0; }
+    &.next { right: 0; }
+  }
+
+  .timeline-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .timeline {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+  }
+
+  .timeline-item {
+    display: inline-block;
+    width: 400px;
+    vertical-align: top;
+    padding: 1rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .timeline-date {
+    position: relative;
+    padding: 1rem 0;
+  }
+
+  .timeline-dot {
+    position: relative;
+    top: -3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10px;
+    width: 10px;
+    background: white;
+    border-radius: 50%;
+    z-index: 5;
+  }
+
+  .timeline-content {
+    padding: 1rem;
+    
+    border-radius: 10px;
+    color: white;
+  }
+
+  .timeline-line {
+    width: 2600px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: white;
+    z-index: 1;
+  }
+}
+

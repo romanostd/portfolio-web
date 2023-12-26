@@ -4,7 +4,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap");
 
 $color-dark-blue: #0F1624;
-$color-linear-gradient: #13ADC7, #6978D1, #945DD6;
+$color-linear-gradient:
+#4E31AA,
+#2F58CD,
+#3795BD;
 $color-light-pink: #BCBCBC;
 $color-white: #ffff;
 
@@ -17,5 +20,96 @@ $color-white: #ffff;
 }
 
 body {
-  background-color: #0F1624;
+  background-color: $color-dark-blue;
 }
+
+//slider
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.8em;
+  height: 1.5sem;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #1f1f1f;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  border-radius: 20px;
+  left: 8px;
+  bottom: 6px;
+  background: linear-gradient(144deg,$color-linear-gradient);
+  transition: .4s;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(2.1em);
+}
+
+.intro {
+  color: #fff;
+  padding-right: 0.5em;
+  font-size: 22px;
+}
+
+//animated text
+
+.loader {
+  position: relative;
+  overflow: hidden;
+  border-right: 3px solid;
+  width: 0px;
+  animation: typewriter 3s steps(15)  infinite alternate , blink 3s steps(15) infinite;
+}
+
+.loader-text {
+  font-size: 60px;
+  font-weight: 700;
+  background: linear-gradient(to right, $color-linear-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 750px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-right-color: rgba(255,255,255,.75);
+    ;
+  }
+
+  100% {
+    border-right-color: transparent;
+  }
+}
+

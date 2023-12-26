@@ -1,35 +1,37 @@
 <div class="font-poppins overflow-x-hidden">
-  <header
-    class="container mx-auto flex items-center justify-between py-4 border-b border-gray-700"
-  >
-    <div class="flex items-center">
-      <span class="text-white font-semibold text-lg">Portfolio</span>
+  <header class="container mx-auto flex items-center justify-between py-4">
+    <div class="flex">
+      <img src="../assets/logo.png" alt="Project 1" width="50" height="45" />
     </div>
 
     <nav class="hidden md:flex space-x-4">
-      <a href="#" class="text-white hover:text-blue-500">Projects</a>
-      <a href="#" class="text-white hover:text-blue-500">Technologies</a>
-      <a href="#" class="text-white hover:text-blue-500">About me</a>
+      <a href="#" class=" nav-link  text-white">Projects</a>
+      <a href="#" class="nav-link text-white">Technologies</a>
+      <a href="#" class="nav-link text-white">About me</a>
     </nav>
 
     <div class="flex space-x-4">
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
       <a href="#" class="text-white hover:text-blue-500"> EN-US </a>
     </div>
   </header>
 
-  <section class="relative container mx-auto px-4 pt-60">
+  <section class="relative container mx-auto px-4 py-56">
     <div class="flex justify-between">
       <div>
-        <h2 class="text-3xl text-white font-bold mb-8">
-          Lorem ipsum dolor sit amet
-        </h2>
-        <div class="py-4 text-white max-w-[850px] mx-auto text-3xl color-pink">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <div class="loader">
+          <span class="loader-text">{{ title }}</span>
         </div>
-        
+        <div class="py-10 text-white max-w-[850px] mx-auto text-3xl color-pink">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+
         <div>
           <button class="main-button w-40 h-12">Let's begin</button>
         </div>
@@ -39,7 +41,6 @@
         alt="Pattern"
         class="absolute right-36 top-96 transform translate-x-1/2 -translate-y-1/2"
       />
-    
     </div>
   </section>
   <section class="container mx-auto px-4 py-20">
@@ -60,12 +61,10 @@
           </h3>
           <div class="mt-2 w-1/2 mx-auto h-1 project-title-border"></div>
 
-          <p class="my-5 text-white font-semibold">
+          <p class="text-white my-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit...
           </p>
-          <button class="main-button w-52 h-14 font-semibold">
-            Look it up
-          </button>
+          <button class="main-button w-52 h-14">Look it up</button>
         </div>
       </div>
 
@@ -90,7 +89,7 @@
         </div>
       </div>
 
-      <div class="projects-card p-4 z-50">
+      <div class="projects-card p-4">
         <div class="p-6">
           <img
             class="border-radius"
@@ -98,13 +97,13 @@
             alt="Project 1"
           />
         </div>
-        <div class="p-6 ">
+        <div class="p-6">
           <h3 class="text-center text-white text-3xl font-semibold">
             PROJECT 1
           </h3>
           <div class="mt-2 w-1/2 mx-auto h-1 project-title-border"></div>
 
-          <p class="text-gray-400 my-5">
+          <p class="text-white my-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit...
           </p>
           <button class="main-button w-52 h-14">Look it up</button>
@@ -125,7 +124,7 @@
           </h3>
           <div class="mt-2 w-1/2 mx-auto h-1 project-title-border"></div>
 
-          <p class="text-gray-400 my-5">
+          <p class="text-white my-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit...
           </p>
           <button class="main-button w-52 h-14">Look it up</button>
@@ -135,6 +134,21 @@
   </section>
   <section class="container mx-auto px-4 py-8">
     <h2 class="text-3xl text-white font-bold mb-8">Technologies</h2>
+    <div class="space-y-4 mb-4">
+      <div>
+        <div class="flex justify-between">
+          <div class="text-white">HTML</div>
+          <div class="text-white">Advanced</div>
+        </div>
+
+        <div class="bg-gray-700 rounded-full h-2.5 dark:bg-gray-700">
+          <div
+            class="bg-linear-gradient h-2.5 rounded-full"
+            style="width: 90%"
+          ></div>
+        </div>
+      </div>
+    </div>
     <div class="space-y-4">
       <div>
         <div class="flex justify-between">
@@ -151,6 +165,27 @@
       </div>
     </div>
   </section>
+  <section class="timeline-container container mx-auto px-4 py-8">
+    <h2 class="text-3xl text-white font-bold mb-8">About me</h2>
+    
+    <div class="timeline-navigation prev" (click)="scrollLeft()">&#10094;</div>
+    
+    <div class="timeline-wrapper" #timelineWrapper>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let item of timelineItems; let i = index">
+          <div class="timeline-date text-white">{{ item.date }}</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">{{ item.content }}</div>
+        </div>
+      </div>
+      <div class="timeline-line"></div>
+    </div>
+    
+    <div class="timeline-navigation next" (click)="scrollRight()">&#10095;</div>
+  </section>
+  
+  
+  
   <footer class="text-center py-4">
     <p class="text-gray-400">
       &copy; 2023 Romano M. Stedile. All Rights Reserved.
