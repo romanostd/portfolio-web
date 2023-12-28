@@ -1,0 +1,15 @@
+@import "../../../styles.scss";
+
+.sidebar {
+    position: fixed;
+    left: 0px;
+    top: 0;
+    height: 100%;
+    width: 350px;
+    background: linear-gradient(to right, $color-linear-gradient);
+    z-index: 5000;
+    transition: left 0.3s ease-in-out;
+  }
+
+
+  

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -43,18 +43,46 @@ export class AppComponent implements OnInit{
     }
   ];
 
+  showPrevArrow: boolean = false;
+  showNextArrow: boolean = true;
+
+  ngAfterViewInit(): void {
+    this.checkArrowsVisibility();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkArrowsVisibility();
+  }
+
+  checkArrowsVisibility() {
+    const timelineWrapper = this.timelineWrapper.nativeElement;
+    this.showPrevArrow = timelineWrapper.scrollLeft > 0;
+    this.showNextArrow = timelineWrapper.scrollLeft < timelineWrapper.scrollWidth - timelineWrapper.clientWidth;
+  }
+
   scrollLeft() {
-    this.timelineWrapper.nativeElement.scrollBy({ left: -250, behavior: 'smooth' });
+    const timelineWrapper = this.timelineWrapper.nativeElement;
+    timelineWrapper.scrollBy({ left: -500, behavior: 'smooth' });
+    setTimeout(() => this.checkArrowsVisibility(), 500);
   }
 
   scrollRight() {
-    this.timelineWrapper.nativeElement.scrollBy({ left: 250, behavior: 'smooth' }); 
+    const timelineWrapper = this.timelineWrapper.nativeElement;
+    timelineWrapper.scrollBy({ left: 500, behavior: 'smooth' });
+    setTimeout(() => this.checkArrowsVisibility(), 500);
+  }
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+    console.log('Sidebar status:', this.isSidebarOpen); 
   }
 
 
   title?: string;
   private texts: string[] = ['Romano Marcos Stedile', 'Full Stack Developer'];
   private currentIndex = 0;
+  isSidebarOpen = false;
 
   ngOnInit(): void {
     this.title = this.texts[this.currentIndex];

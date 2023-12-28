@@ -1,39 +1,61 @@
+<app-side-menu *ngIf="isSidebarOpen"></app-side-menu>
 <div class="font-poppins overflow-x-hidden">
-  <header class="container mx-auto flex items-center justify-between py-4">
+  <header class="container mx-auto flex items-center justify-between py-4 px-4 md:px-0">
     <div class="flex">
-      <img src="../assets/logo.png" alt="Project 1" width="50" height="45" />
+      <img src="../assets/logo.png" alt="Logo" width="50" height="45" />
     </div>
 
+    <button class="md:hidden" (click)="toggleSidebar()">
+      <i class="fas fa-bars text-3xl icon-link"></i>
+    </button>
+
     <nav class="hidden md:flex space-x-4">
-      <a href="#" class=" nav-link  text-white">Projects</a>
+      <a href="#" class="nav-link text-white">Projects</a>
       <a href="#" class="nav-link text-white">Technologies</a>
       <a href="#" class="nav-link text-white">About me</a>
     </nav>
-
-    <div class="flex space-x-4">
+    <div class="hidden md:flex space-x-4">
       <label class="switch">
         <input type="checkbox" />
         <span class="slider"></span>
       </label>
-      <a href="#" class="text-white hover:text-blue-500"> EN-US </a>
+      <span href="#" class="text-white"> EN-US </span>
     </div>
   </header>
 
-  <section class="relative container mx-auto px-4 py-56">
+  <section class="relative container mx-auto px-4 py-24 md:py-56">
     <div class="flex justify-between">
       <div>
         <div class="loader">
           <span class="loader-text">{{ title }}</span>
         </div>
-        <div class="py-10 text-white max-w-[850px] mx-auto text-3xl color-pink">
+        <div class="pt-10 text-white max-w-[850px] mx-auto text-3xl color-pink">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
           ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
         </div>
-
-        <div>
-          <button class="main-button w-40 h-12">Let's begin</button>
+        <div class="flex space-x-5 py-4">
+          <a href="https://linkedin.com/in/seu-perfil" class="icon-link">
+            <i class="fab fa-linkedin text-4xl"></i>
+          </a>
+          <a
+            href="https://github.com/seu-usuario"
+            class="icon-link"
+            target="_blank"
+          >
+            <i class="fab fa-github text-4xl"></i>
+          </a>
+          <a href="mailto:seuemail@example.com" class="icon-link">
+            <i class="fas fa-envelope text-4xl"></i>
+          </a>
+          <a
+            href="https://wa.me/5541987765507"
+            class="icon-link"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp text-4xl"></i>
+          </a>
         </div>
       </div>
       <img
@@ -167,12 +189,21 @@
   </section>
   <section class="timeline-container container mx-auto px-4 py-8">
     <h2 class="text-3xl text-white font-bold mb-8">About me</h2>
-    
-    <div class="timeline-navigation prev" (click)="scrollLeft()">&#10094;</div>
-    
+
+    <div
+      class="timeline-navigation prev"
+      *ngIf="showPrevArrow"
+      (click)="scrollLeft()"
+    >
+      &#10094;
+    </div>
+
     <div class="timeline-wrapper" #timelineWrapper>
       <div class="timeline">
-        <div class="timeline-item" *ngFor="let item of timelineItems; let i = index">
+        <div
+          class="timeline-item"
+          *ngFor="let item of timelineItems; let i = index"
+        >
           <div class="timeline-date text-white">{{ item.date }}</div>
           <div class="timeline-dot"></div>
           <div class="timeline-content">{{ item.content }}</div>
@@ -180,12 +211,16 @@
       </div>
       <div class="timeline-line"></div>
     </div>
-    
-    <div class="timeline-navigation next" (click)="scrollRight()">&#10095;</div>
+
+    <div
+      class="timeline-navigation next"
+      *ngIf="showNextArrow"
+      (click)="scrollRight()"
+    >
+      &#10095;
+    </div>
   </section>
-  
-  
-  
+
   <footer class="text-center py-4">
     <p class="text-gray-400">
       &copy; 2023 Romano M. Stedile. All Rights Reserved.

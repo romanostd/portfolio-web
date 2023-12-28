@@ -2,6 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap");
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
 
 $color-dark-blue: #0F1624;
 $color-linear-gradient:
@@ -11,8 +14,17 @@ $color-linear-gradient:
 $color-light-pink: #BCBCBC;
 $color-white: #ffff;
 
+
+.font-poppins {
+  font-family: "Poppins";
+}
+
 .color-pink {
   color: $color-light-pink;
+}
+
+.color-linear-gradient {
+  color: linear-gradient(144deg,$color-linear-gradient);
 }
 
 .color-white {
@@ -110,6 +122,21 @@ body {
 
   100% {
     border-right-color: transparent;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  .loader-text {
+    font-size: 30px; 
+    white-space: nowrap; 
+  }
+
+  @keyframes typewriter {
+    100% {
+      width: 80%;
+    }
   }
 }
 

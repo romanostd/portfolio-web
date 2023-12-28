@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SideMenuComponent } from './shared/side-menu/side-menu.component';
+import { TimelineComponent } from './shared/timeline/timeline.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SideMenuComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

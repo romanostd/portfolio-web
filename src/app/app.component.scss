@@ -1,9 +1,5 @@
 @import "../styles.scss";
 
-.font-poppins {
-  font-family: "Poppins";
-}
-
 .bg-linear-gradient {
   background: linear-gradient(to right, $color-linear-gradient);
 }
@@ -26,10 +22,11 @@
 }
 
 .project-title-border {
+  background-image: linear-gradient(to right, $color-linear-gradient);
 }
 
 .border-radius {
-    border-radius: 8px;
+  border-radius: 8px;
 }
 
 .nav-link {
@@ -39,7 +36,7 @@
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -54,9 +51,6 @@
   width: 100%;
 }
 
-
-
-
 .timeline-container {
   position: relative;
   overflow: hidden;
@@ -67,13 +61,21 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 1rem;
     z-index: 10;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 
-    &.prev { left: 0; }
-    &.next { right: 0; }
+    &.prev {
+      left: 10px;
+    }
+    &.next {
+      right: 10px;
+    }
+
+    &:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
   }
 
   .timeline-wrapper {
@@ -115,16 +117,16 @@
 
   .timeline-content {
     padding: 1rem;
-    
+
     border-radius: 10px;
     color: white;
   }
 
   .timeline-line {
-    width: 2600px;
+    width: 2400px;
     position: absolute;
     top: 20px;
-    left: 0;
+    left: 200px;
     right: 0;
     height: 2px;
     background: white;
@@ -132,3 +134,15 @@
   }
 }
 
+.icon-link {
+  transition: color 0.3s ease;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(to right, $color-linear-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
