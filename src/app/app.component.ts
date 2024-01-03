@@ -1,50 +1,42 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { projects } from './mocks/projects.mock';
+import { timelineItems } from './mocks/timeline.mock';
+import { technologies } from './mocks/technologies.mock';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-
-export class AppComponent implements OnInit{
-
+export class AppComponent implements OnInit {
   @ViewChild('timelineWrapper') timelineWrapper!: ElementRef;
 
-  public timelineItems = [
-    {
-      date: '2018',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-      date: '2019',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-      date: '2020',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-      date: '2021',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
-    {
-      date: '2021',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
+  ngOnInit(): void {
+    this.title = this.texts[this.currentIndex];
 
-    {
-      date: '2021',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    },
+    setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.texts.length;
+      this.title = this.texts[this.currentIndex];
+    }, 6000);
+  }
 
-    {
-      date: '2021',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    }
-  ];
-
+  projects = projects;
+  timelineItens = timelineItems;
+  techList = technologies;
+  title?: string;
+  isSidebarOpen = false;
   showPrevArrow: boolean = false;
   showNextArrow: boolean = true;
+  selectedProject: any;
+  isBlurred: boolean = false;
+  private texts: string[] = ['Romano Marcos Stedile', 'Full Stack Developer'];
+  private currentIndex = 0;
 
   ngAfterViewInit(): void {
     this.checkArrowsVisibility();
@@ -58,38 +50,41 @@ export class AppComponent implements OnInit{
   checkArrowsVisibility() {
     const timelineWrapper = this.timelineWrapper.nativeElement;
     this.showPrevArrow = timelineWrapper.scrollLeft > 0;
-    this.showNextArrow = timelineWrapper.scrollLeft < timelineWrapper.scrollWidth - timelineWrapper.clientWidth;
+    this.showNextArrow =
+      timelineWrapper.scrollLeft <
+      timelineWrapper.scrollWidth - timelineWrapper.clientWidth;
   }
 
   scrollLeft() {
     const timelineWrapper = this.timelineWrapper.nativeElement;
-    timelineWrapper.scrollBy({ left: -500, behavior: 'smooth' });
-    setTimeout(() => this.checkArrowsVisibility(), 500);
+    timelineWrapper.scrollBy({ left: -600, behavior: 'smooth' });
+    setTimeout(() => this.checkArrowsVisibility(), 250);
   }
 
   scrollRight() {
     const timelineWrapper = this.timelineWrapper.nativeElement;
-    timelineWrapper.scrollBy({ left: 500, behavior: 'smooth' });
-    setTimeout(() => this.checkArrowsVisibility(), 500);
+    timelineWrapper.scrollBy({ left: 600, behavior: 'smooth' });
+    setTimeout(() => this.checkArrowsVisibility(), 230);
   }
 
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
-    console.log('Sidebar status:', this.isSidebarOpen); 
   }
 
+  openModal(project: any) {
+    this.selectedProject = project;
+    this.isBlurred = true;
+  }
 
-  title?: string;
-  private texts: string[] = ['Romano Marcos Stedile', 'Full Stack Developer'];
-  private currentIndex = 0;
-  isSidebarOpen = false;
+  closeModal() {
+    this.selectedProject = null;
+    this.isBlurred = false;
+  }
 
-  ngOnInit(): void {
-    this.title = this.texts[this.currentIndex];
-
-    setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.texts.length;
-      this.title = this.texts[this.currentIndex];
-    }, 6000); 
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 }

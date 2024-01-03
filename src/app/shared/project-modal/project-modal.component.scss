@@ -1,0 +1,41 @@
+@import "../../../styles.scss";
+
+.carousel-container {
+  position: relative;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+}
+
+.border-radius {
+  border-radius: 10px;
+}
+
+.projects-card {
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: linear-gradient(to right, $color-linear-gradient);
+  z-index: 10;
+}

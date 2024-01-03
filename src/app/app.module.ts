@@ -4,13 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideMenuComponent } from './shared/side-menu/side-menu.component';
-import { TimelineComponent } from './shared/timeline/timeline.component';
+
+import { ProjectModalComponent } from './shared/project-modal/project-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent,
-    TimelineComponent
+    ProjectModalComponent
   ],
   imports: [
     BrowserModule,

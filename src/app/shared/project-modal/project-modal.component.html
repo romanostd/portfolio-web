@@ -1,0 +1,46 @@
+<div class="projects-card p-10 font-poppins" *ngIf="project">
+  <div
+    class="close-button text-3xl cursor-pointer text-white"
+    (click)="close.emit()"
+  >
+    &times;
+  </div>
+  <div class="carousel-container relative">
+    <div class="carousel-arrow left-arrow text-3xl" (click)="previousImage()">
+      &#10094;
+    </div>
+
+    <div class="carousel overflow-hidden">
+      <div
+        class="carousel-inner flex transition-transform duration-300"
+        [style.transform]="'translateX(-' + currentImageIndex * 100 + '%)'"
+      >
+        <div
+          class="carousel-item flex-shrink-0"
+          *ngFor="let image of project.images"
+        >
+          <img class="border-radius" [src]="image" [alt]="project.title" />
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-arrow right-arrow text-3xl" (click)="nextImage()">
+      &#10095;
+    </div>
+  </div>
+
+  <div class="p-4">
+    <h3 class="text-center text-white text-3xl font-semibold">
+      {{ project.title }}
+    </h3>
+    <div class="mt-2 w-1/2 mx-auto h-1 project-title-border"></div>
+    <p class="text-white my-5">
+      {{ project.longDescription }}
+    </p>
+    <div class="flex justify-center items-center">
+      <a href="{{ project.link }}" rel="noopener noreferrer" target="_blank">
+        <button class="main-button w-52 h-14">View repository</button>
+      </a>
+    </div>
+  </div>
+</div>

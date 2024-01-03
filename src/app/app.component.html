@@ -1,18 +1,36 @@
-<app-side-menu *ngIf="isSidebarOpen"></app-side-menu>
-<div class="font-poppins overflow-x-hidden">
-  <header class="container mx-auto flex items-center justify-between py-4 px-4 md:px-0">
+<app-side-menu [isOpen]="isSidebarOpen"></app-side-menu>
+<div class="modal" *ngIf="selectedProject">
+  <div class="modal-content">
+    <app-project-modal
+      [project]="selectedProject"
+      (close)="closeModal()"
+    ></app-project-modal>
+  </div>
+</div>
+
+<div [class.blur-effect]="isBlurred" class="font-poppins overflow-x-hidden">
+  <header
+    class="container mx-auto flex items-center justify-between py-4 px-4 md:px-0"
+  >
     <div class="flex">
       <img src="../assets/logo.png" alt="Logo" width="50" height="45" />
     </div>
-
-    <button class="md:hidden" (click)="toggleSidebar()">
-      <i class="fas fa-bars text-3xl icon-link"></i>
-    </button>
+    <input
+      class="md:hidden"
+      type="checkbox"
+      id="checkbox"
+      (click)="toggleSidebar()"
+    />
+    <label for="checkbox" class="toggle md:hidden">
+      <div class="bars" id="bar1"></div>
+      <div class="bars" id="bar2"></div>
+      <div class="bars" id="bar3"></div>
+    </label>
 
     <nav class="hidden md:flex space-x-4">
-      <a href="#" class="nav-link text-white">Projects</a>
-      <a href="#" class="nav-link text-white">Technologies</a>
-      <a href="#" class="nav-link text-white">About me</a>
+      <a href="#projects" class="nav-link text-white">Projects</a>
+      <a href="#technologies" class="nav-link text-white">Technologies</a>
+      <a href="#about-me" class="nav-link text-white">About me</a>
     </nav>
     <div class="hidden md:flex space-x-4">
       <label class="switch">
@@ -23,36 +41,52 @@
     </div>
   </header>
 
-  <section class="relative container mx-auto px-4 py-24 md:py-56">
+  <section class="relative container mx-auto px-4 py-40 md:py-56">
     <div class="flex justify-between">
       <div>
         <div class="loader">
           <span class="loader-text">{{ title }}</span>
         </div>
-        <div class="pt-10 text-white max-w-[850px] mx-auto text-3xl color-pink">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+        <div
+          class="pt-10 text-white max-w-[850px] mx-auto text-xl md:text-3xl color-pink"
+        >
+          Hi there! I'm Romano, a web developer for over 5 years, graduated in
+          systems analysis and development and postgraduate in full stack
+          development, I'm currently a software engineer at Senior Systems, the
+          5th largest software company in Brazil. I really enjoy developing
+          smart and modern solutions with an intuitive and interactive design.
+          Feel free to contact me using one of the options below:
         </div>
         <div class="flex space-x-5 py-4">
-          <a href="https://linkedin.com/in/seu-perfil" class="icon-link">
-            <i class="fab fa-linkedin text-4xl"></i>
-          </a>
           <a
-            href="https://github.com/seu-usuario"
+            href="https://www.linkedin.com/in/romano-stedile/"
             class="icon-link"
             target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-linkedin text-4xl" rel="noopener noreferrer"></i>
+          </a>
+          <a
+            href="https://github.com/romanostd"
+            class="icon-link"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i class="fab fa-github text-4xl"></i>
           </a>
-          <a href="mailto:seuemail@example.com" class="icon-link">
+          <a
+            href="romanostedile@gmail.com"
+            class="icon-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fas fa-envelope text-4xl"></i>
           </a>
           <a
             href="https://wa.me/5541987765507"
             class="icon-link"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <i class="fab fa-whatsapp text-4xl"></i>
           </a>
@@ -64,131 +98,57 @@
         class="absolute right-36 top-96 transform translate-x-1/2 -translate-y-1/2"
       />
     </div>
+    <a href="#projects" class="arrow-down" aria-label="Go to next section">
+      <i class="fas fa-chevron-down text-white"></i>
+    </a>
   </section>
-  <section class="container mx-auto px-4 py-20">
+  <section id="projects" class="container mx-auto px-4 py-20">
     <h2 class="text-3xl text-white font-bold mb-20">Projects</h2>
 
-    <div class="grid md:grid-cols-2 gap-40 px-28">
-      <div class="projects-card p-4">
+    <div class="grid md:grid-cols-2 gap-40">
+      <div class="projects-card p-4" *ngFor="let project of projects">
         <div class="p-6">
           <img
             class="border-radius"
-            src="../assets/4asset.png"
-            alt="Project 1"
+            [src]="project.images[0]"
+            [alt]="project.title"
           />
         </div>
         <div class="p-6">
           <h3 class="text-center text-white text-3xl font-semibold">
-            PROJECT 1
+            {{ project.title }}
           </h3>
           <div class="mt-2 w-1/2 mx-auto h-1 project-title-border"></div>
-
           <p class="text-white my-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+            {{ project.description }}
           </p>
-          <button class="main-button w-52 h-14">Look it up</button>
-        </div>
-      </div>
-
-      <div class="projects-card p-4">
-        <div class="p-6">
-          <img
-            class="border-radius"
-            src="../assets/4asset.png"
-            alt="Project 1"
-          />
-        </div>
-        <div class="p-6">
-          <h3 class="text-center text-white text-3xl font-semibold">
-            PROJECT 1
-          </h3>
-          <div class="mt-2 w-1/2 mx-auto h-1 project-title-border"></div>
-
-          <p class="text-white my-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          </p>
-          <button class="main-button w-52 h-14">Look it up</button>
-        </div>
-      </div>
-
-      <div class="projects-card p-4">
-        <div class="p-6">
-          <img
-            class="border-radius"
-            src="../assets/4asset.png"
-            alt="Project 1"
-          />
-        </div>
-        <div class="p-6">
-          <h3 class="text-center text-white text-3xl font-semibold">
-            PROJECT 1
-          </h3>
-          <div class="mt-2 w-1/2 mx-auto h-1 project-title-border"></div>
-
-          <p class="text-white my-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          </p>
-          <button class="main-button w-52 h-14">Look it up</button>
-        </div>
-      </div>
-
-      <div class="projects-card p-4">
-        <div class="p-6">
-          <img
-            class="border-radius"
-            src="../assets/4asset.png"
-            alt="Project 1"
-          />
-        </div>
-        <div class="p-6">
-          <h3 class="text-center text-white text-3xl font-semibold">
-            PROJECT 1
-          </h3>
-          <div class="mt-2 w-1/2 mx-auto h-1 project-title-border"></div>
-
-          <p class="text-white my-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-          </p>
-          <button class="main-button w-52 h-14">Look it up</button>
+          <button class="main-button w-52 h-14" (click)="openModal(project)">
+            View more
+          </button>
         </div>
       </div>
     </div>
   </section>
-  <section class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl text-white font-bold mb-8">Technologies</h2>
-    <div class="space-y-4 mb-4">
-      <div>
-        <div class="flex justify-between">
-          <div class="text-white">HTML</div>
-          <div class="text-white">Advanced</div>
-        </div>
-
-        <div class="bg-gray-700 rounded-full h-2.5 dark:bg-gray-700">
-          <div
-            class="bg-linear-gradient h-2.5 rounded-full"
-            style="width: 90%"
-          ></div>
-        </div>
-      </div>
-    </div>
+  <section id="technologies" class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl text-white font-bold mb-20">Technologies and Skills</h2>
     <div class="space-y-4">
-      <div>
+      <div *ngFor="let tech of techList">
         <div class="flex justify-between">
-          <div class="text-white">HTML</div>
-          <div class="text-white">Advanced</div>
+          <div class="text-white">{{ tech.name }}</div>
+          <div class="text-white">{{ tech.level }}</div>
         </div>
 
         <div class="bg-gray-700 rounded-full h-2.5 dark:bg-gray-700">
           <div
             class="bg-linear-gradient h-2.5 rounded-full"
-            style="width: 90%"
+            [style.width]="tech.progress + '%'"
           ></div>
         </div>
       </div>
     </div>
   </section>
-  <section class="timeline-container container mx-auto px-4 py-8">
-    <h2 class="text-3xl text-white font-bold mb-8">About me</h2>
+  <section id="about-me" class="timeline-container container mx-auto px-4 py-8">
+    <h2 class="text-3xl text-white font-bold mb-20">About me</h2>
 
     <div
       class="timeline-navigation prev"
@@ -202,7 +162,7 @@
       <div class="timeline">
         <div
           class="timeline-item"
-          *ngFor="let item of timelineItems; let i = index"
+          *ngFor="let item of timelineItens; let i = index"
         >
           <div class="timeline-date text-white">{{ item.date }}</div>
           <div class="timeline-dot"></div>
@@ -220,7 +180,15 @@
       &#10095;
     </div>
   </section>
-
+  <div class="flex justify-center items-center my-4">
+    <button class="button" (click)="scrollToTop()">
+      <svg class="svgIcon" viewBox="0 0 384 512">
+        <path
+          d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+        ></path>
+      </svg>
+    </button>
+  </div>
   <footer class="text-center py-4">
     <p class="text-gray-400">
       &copy; 2023 Romano M. Stedile. All Rights Reserved.
