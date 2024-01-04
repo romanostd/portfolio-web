@@ -233,3 +233,18 @@
   bottom: unset;
   transition-duration: 0.3s;
 }
+
+//animated section
+
+.animated-section {
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.animated-section.active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}

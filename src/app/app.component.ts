@@ -109,4 +109,18 @@ export class AppComponent implements OnInit {
       behavior: 'smooth',
     });
   }
+
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    const sections = document.querySelectorAll('.animated-section');
+    sections.forEach((section: Element) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        section.classList.add('active');
+      } else {
+        section.classList.remove('active');
+      }
+    });
+  }
 }
