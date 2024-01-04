@@ -86,7 +86,7 @@ export class AppComponent implements OnInit {
   scrollRight() {
     const timelineWrapper = this.timelineWrapper.nativeElement;
     timelineWrapper.scrollBy({ left: 600, behavior: 'smooth' });
-    setTimeout(() => this.checkArrowsVisibility(), 230);
+    setTimeout(() => this.checkArrowsVisibility(), 250);
   }
 
   toggleSidebar() {
