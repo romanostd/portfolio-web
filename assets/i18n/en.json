@@ -1,0 +1,108 @@
+{
+  "HEADER": {
+    "PROJECTS": "Projects",
+    "TECHNOLOGIES": "Technologies",
+    "ABOUT_ME": "About me",
+    "LANGUAGE_TOGGLE": "EN-US"
+  },
+  "PRESENTATION": {
+    "ABOUT": "Hi there! I'm Romano, a web developer for over 5 years, graduated in systems analysis and development and postgraduate in full stack development, I'm currently a software engineer at Senior Systems, the 5th largest software company in Brazil. I really enjoy developing smart and modern solutions with an intuitive and interactive design. Feel free to contact me using one of the options below:"
+  },
+
+  "BUTTONS": {
+    "VIEW_MORE": "View more",
+    "VIEW_REPOSITORY": "View repository",
+    "BACK_TO_TOP": "Back to top"
+  },
+  "PROJECTS": {
+    "4ASSET_CRUD": {
+      "TITLE": "4Asset Crud",
+      "DESCRIPTION": "A beautiful crud very well styled with Tailwind and built using Angular.",
+      "LONG_DESCRIPTION": "This Angular application provides a user-friendly interface for managing a list of users. It allows users to create new entries, view a list of existing users, edit their details, and delete them as needed. The project utilizes TailwindCSS for styling, ensuring a responsive and modern design."
+    },
+    "TERMINATOR_SUPPLEMENTS": {
+      "TITLE": "Terminator Supplements",
+      "DESCRIPTION": "An Full-stack and Full-cycle e-commerce, built using Angular, Node.js with Express.js, MySQL and DevOps culture.",
+      "LONG_DESCRIPTION": "An e-commerce platform for supplements, built using Angular, Node.js with Express, and MySQL. This project have a full-stack and full-cycle content, with CI/CD implemented using GitHub Actions and the ECS service of AWS to auto deploy the application."
+    },
+    "COSMETIC_PAGE": {
+      "TITLE": "Cosmetic Page",
+      "DESCRIPTION": "A web application developed in react, that list and filter products.",
+      "LONG_DESCRIPTION": "This is a web application that lists and details cosmetics. You can filter, sort, and mark cosmetics as favorites."
+    },
+    "MOB7_DEV_CHALLENGE": {
+      "TITLE": "Mob7 Dev Challenge",
+      "DESCRIPTION": "This is a web application built using angular, that consumes a API and generate data in client side, about car localization.",
+      "LONG_DESCRIPTION": "This repository contains the source code for a Vehicle Point of Interest (POI) Tracking System. The application is designed to calculate and display the amount of time vehicles spend within predefined Points of Interest (POIs). It provides a web interface where users can filter the data by vehicle license plate and date, and view the processed results in a tabular format."
+    }
+  },
+  "TIMELINE": {
+    "HEADER": "About me",
+    "2018_2021": {
+      "DATE": "2018 - 2021",
+      "CONTENT": "Started my college degree in Systems Analysis and Development, where I learned basic programming concepts, logic, flowcharts, data structures, and developed projects mainly in Java."
+    },
+    "2019_2020": {
+      "DATE": "2019 - 2020",
+      "CONTENT": "Internship at Simplifica, assisting in the development of responsive web applications, maintenance, and optimization of projects using React, Bootstrap, HTML, CSS, Javascript, and Sass."
+    },
+    "2021": {
+      "DATE": "2021-2021",
+      "CONTENT": "Full-Stack Developer role at NsInova, contributing to web application development using REST APIs and Angular as the main technology, assisting in back-end API development with Node.js and SQL, migrating old systems to Angular, and creating reusable components."
+    },
+    "2021_2022": {
+      "DATE": "2021 - 2022",
+      "CONTENT": "Frontend Developer at IsoEnterprise, helping the team in developing new modules to meet client needs, maintaining and optimizing the system using React."
+    },
+    "2022_2023": {
+      "DATE": "2022 - 2023",
+      "CONTENT": "Software Engineer at the Eldorado Research Institute. Main activities included developing clean and scalable web applications using Angular and Node.js, working with agile teams, CI/CD tools, planning and creating components, conducting unit tests, and mentoring inexperienced developers."
+    },
+    "2023_2024": {
+      "DATE": "2023 - 2024",
+      "CONTENT": "Started my postgraduate studies in full-stack development at PUCRS, filling many gaps in my knowledge, both conceptual and practical, learning the complete cycle of product creation and delivery, aspects of DevOps, UX/UI, and more."
+    },
+    "2024_PRESENT": {
+      "DATE": "2024 - Present",
+      "CONTENT": "Currently working as a Full-Stack Software Developer at Senior Systems. My role involves developing sophisticated and modern systems for the construction industry, primarily using Angular and Node.js. As part of agile teams, I focus on delivering high-quality, scalable solutions that meet the evolving needs of the construction sector."
+    }
+  },
+  "TECHNOLOGIES": {
+    "HEADER": "Technologies and Skills",
+    "ANGULAR": {
+      "NAME": "Angular",
+      "LEVEL": "Expert"
+    },
+    "NODE_JS": {
+      "NAME": "Node.js",
+      "LEVEL": "Expert"
+    },
+    "TYPESCRIPT": {
+      "NAME": "Typescript",
+      "LEVEL": "Advanced"
+    },
+    "RELATIONAL_DB": {
+      "NAME": "Relational DB",
+      "LEVEL": "Advanced"
+    },
+    "TESTS": {
+      "NAME": "Tests",
+      "LEVEL": "Advanced"
+    },
+    "DEVOPS": {
+      "NAME": "DevOps",
+      "LEVEL": "Intermediate"
+    },
+    "NOSQL": {
+      "NAME": "NoSql",
+      "LEVEL": "Intermediate"
+    },
+    "REACT": {
+      "NAME": "React",
+      "LEVEL": "Intermediate"
+    }
+  },
+  "FOOTER": {
+    "COPYRIGHT": "2023 Romano M. Stedile. All Rights Reserved."
+  }
+}
