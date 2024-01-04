@@ -8,6 +8,7 @@ import {
 import { projects } from './mocks/projects.mock';
 import { timelineItems } from './mocks/timeline.mock';
 import { technologies } from './mocks/technologies.mock';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -17,15 +18,12 @@ import { technologies } from './mocks/technologies.mock';
 export class AppComponent implements OnInit {
   @ViewChild('timelineWrapper') timelineWrapper!: ElementRef;
 
-  ngOnInit(): void {
-    this.title = this.texts[this.currentIndex];
-
-    setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.texts.length;
-      this.title = this.texts[this.currentIndex];
-    }, 6000);
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
   }
 
+  currentLang = 'en';
   projects = projects;
   timelineItens = timelineItems;
   techList = technologies;
@@ -37,6 +35,30 @@ export class AppComponent implements OnInit {
   isBlurred: boolean = false;
   private texts: string[] = ['Romano Marcos Stedile', 'Full Stack Developer'];
   private currentIndex = 0;
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
+
+  onLanguageChange(event: any) {
+    if ((event == 'pt') || (event == 'en')) {
+      this.switchLanguage(event);
+    }
+    else {
+    const input = event.target as HTMLInputElement;
+    this.currentLang = input.checked ? 'pt' : 'en';
+    this.switchLanguage(this.currentLang);
+  }
+  }
+
+  ngOnInit(): void {
+    this.title = this.texts[this.currentIndex];
+
+    setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.texts.length;
+      this.title = this.texts[this.currentIndex];
+    }, 6000);
+  }
 
   ngAfterViewInit(): void {
     this.checkArrowsVisibility();

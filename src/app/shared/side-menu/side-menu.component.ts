@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,4 +7,15 @@ import { Component, Input } from '@angular/core';
 })
 export class SideMenuComponent {
   @Input() isOpen: boolean = false;
+  @Input() currentLang: string = 'en'; 
+  @Output() languageChange = new EventEmitter<string>(); 
+
+  onLanguageSwitchChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input) {
+      const newLang = input.checked ? 'pt' : 'en';
+      this.currentLang = newLang;
+      this.languageChange.emit(newLang);
+    }
+  }
 }

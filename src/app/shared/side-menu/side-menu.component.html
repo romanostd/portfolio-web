@@ -3,19 +3,19 @@
   [class.open]="isOpen"
 >
   <a href="#projects" class="block p-4 text-white hover:text-blue-500"
-    >Projects</a
+    >{{ "HEADER.PROJECTS" | translate }}</a
   >
   <a href="#technologies" class="block p-4 text-white hover:text-blue-500"
-    >Technologies</a
+    >{{ "HEADER.TECHNOLOGIES" | translate }}</a
   >
   <a href="#about-me" class="block p-4 text-white hover:text-blue-500"
-    >About me</a
+    >{{ "HEADER.ABOUT_ME" | translate }}</a
   >
   <div class="md:flex p-4">
     <label class="switch">
-      <input type="checkbox" />
+      <input type="checkbox" (change)="onLanguageSwitchChange($event)" />
       <span class="slider"></span>
     </label>
-    <a href="#" class="ml-2 text-white hover:text-blue-500"> EN-US </a>
+    <a href="#" class="ml-2 text-white hover:text-blue-500">{{ currentLang === 'en' ? 'EN-US' : 'PT-BR' }}</a>
   </div>
 </div>

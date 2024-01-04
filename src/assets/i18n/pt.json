@@ -1,0 +1,107 @@
+{
+  "HEADER": {
+    "PROJECTS": "Projetos",
+    "TECHNOLOGIES": "Tecnologias",
+    "ABOUT_ME": "Sobre mim",
+    "LANGUAGE_TOGGLE": "PT-BR"
+  },
+  "PRESENTATION": {
+    "ABOUT": "Olá! Sou Romano, um desenvolvedor web há mais de 5 anos, graduado em análise e desenvolvimento de sistemas e pós-graduado em desenvolvimento full stack. Atualmente, sou engenheiro de software na Senior Systems, a 5ª maior empresa de software do Brasil. Adoro desenvolver soluções inteligentes e modernas com um design intuitivo e interativo. Sinta-se à vontade para entrar em contato comigo usando uma das opções abaixo:"
+  },  
+  "BUTTONS": {
+    "VIEW_MORE": "Ver mais",
+    "VIEW_REPOSITORY": "Ver repositório",
+    "BACK_TO_TOP": "Voltar ao topo"
+  },
+  "PROJECTS": {
+    "4ASSET_CRUD": {
+      "TITLE": "Crud 4Asset",
+      "DESCRIPTION": "Um belo crud muito bem estilizado com Tailwind e construído usando Angular.",
+      "LONG_DESCRIPTION": "Esta aplicação Angular oferece uma interface amigável para gerenciamento de uma lista de usuários. Permite aos usuários criar novas entradas, visualizar uma lista de usuários existentes, editar seus detalhes e excluí-los conforme necessário. O projeto utiliza TailwindCSS para estilização, garantindo um design responsivo e moderno."
+    },
+    "TERMINATOR_SUPPLEMENTS": {
+      "TITLE": "Terminator Suplementos",
+      "DESCRIPTION": "Um e-commerce completo e de ciclo completo, construído usando Angular, Node.js com Express.js, MySQL e cultura DevOps.",
+      "LONG_DESCRIPTION": "Uma plataforma de e-commerce para suplementos, construída usando Angular, Node.js com Express e MySQL. Este projeto tem um conteúdo full-stack e full-cycle, com CI/CD implementado usando GitHub Actions e o serviço ECS da AWS para auto deploy da aplicação."
+    },
+    "COSMETIC_PAGE": {
+      "TITLE": "Página de Cosméticos",
+      "DESCRIPTION": "Um aplicativo web desenvolvido em React, que lista e filtra produtos.",
+      "LONG_DESCRIPTION": "Este é um aplicativo web que lista e detalha cosméticos. Você pode filtrar, ordenar e marcar cosméticos como favoritos."
+    },
+    "MOB7_DEV_CHALLENGE": {
+      "TITLE": "Mob7 Dev Challenge",
+      "DESCRIPTION": "Este é um aplicativo web construído usando Angular, que consome uma API e gera dados no lado do cliente, sobre a localização de carros.",
+      "LONG_DESCRIPTION": "Este repositório contém o código fonte de um Sistema de Rastreamento de Pontos de Interesse (POI) de Veículos. O aplicativo é projetado para calcular e exibir a quantidade de tempo que os veículos passam dentro de Pontos de Interesse (POIs) predefinidos. Ele fornece uma interface web onde os usuários podem filtrar os dados pela placa do veículo e data, e visualizar os resultados processados em um formato tabular."
+    }
+  },
+  "TIMELINE": {
+    "HEADER": "Sobre mim",
+    "2018_2021": {
+      "DATE": "2018 - 2021",
+      "CONTENT": "Início do meu curso superior em Análise e Desenvolvimento de Sistemas, onde aprendi conceitos básicos de programação, lógica, fluxogramas, estruturas de dados e desenvolvi projetos principalmente em Java."
+    },
+    "2019_2020": {
+      "DATE": "2019 - 2020",
+      "CONTENT": "Estágio na Simplifica, auxiliando no desenvolvimento de aplicações web responsivas, manutenção e otimização de projetos utilizando React, Bootstrap, HTML, CSS, Javascript e Sass."
+    },
+    "2021": {
+      "DATE": "2021",
+      "CONTENT": "Atuação como Desenvolvedor Full-Stack na NsInova, contribuindo para o desenvolvimento de aplicações web usando APIs REST e Angular como tecnologia principal, auxiliando no desenvolvimento de APIs back-end com Node.js e SQL, migrando sistemas antigos para Angular e criando componentes reutilizáveis."
+    },
+    "2021_2022": {
+      "DATE": "2021 - 2022",
+      "CONTENT": "Desenvolvedor Frontend na IsoEnterprise, auxiliando a equipe no desenvolvimento de novos módulos para atender necessidades do cliente, manutenção e otimização do sistema utilizando React."
+    },
+    "2022_2023": {
+      "DATE": "2022 - 2023",
+      "CONTENT": "Engenheiro de Software no Instituto de Pesquisa Eldorado. Principais atividades: desenvolvimento de aplicações web limpas e escaláveis usando Angular e Node.js, trabalho com equipes ágeis, ferramentas de CI/CD, planejamento e criação de componentes, realização de testes unitários e mentoria de desenvolvedores inexperientes."
+    },
+    "2023_2024": {
+      "DATE": "2023 - 2024",
+      "CONTENT": "Início dos meus estudos de pós-graduação em desenvolvimento full-stack na PUCRS, preenchendo muitas lacunas no meu conhecimento, tanto conceituais quanto práticos, aprendendo o ciclo completo de criação e entrega de um produto, aspectos de DevOps, UX/UI e mais."
+    },
+    "2024_PRESENT": {
+      "DATE": "2024 - Atual",
+      "CONTENT": "Atualmente trabalhando como Desenvolvedor de Software Full-Stack na Senior Systems. Minha função envolve desenvolver sistemas sofisticados e modernos para a indústria da construção, principalmente usando Angular e Node.js. Como parte de equipes ágeis, me concentro em entregar soluções de alta qualidade e escaláveis que atendam às necessidades em evolução do setor de construção."
+    }
+  },
+    "TECHNOLOGIES": {
+      "HEADER": "Tecnologias e Habilidades",
+      "ANGULAR": {
+        "NAME": "Angular",
+        "LEVEL": "Especialista"
+      },
+      "NODE_JS": {
+        "NAME": "Node.js",
+        "LEVEL": "Especialista"
+      },
+      "TYPESCRIPT": {
+        "NAME": "Typescript",
+        "LEVEL": "Avançado"
+      },
+      "RELATIONAL_DB": {
+        "NAME": "Banco de Dados Relacional",
+        "LEVEL": "Avançado"
+      },
+      "TESTS": {
+        "NAME": "Testes",
+        "LEVEL": "Avançado"
+      },
+      "DEVOPS": {
+        "NAME": "DevOps",
+        "LEVEL": "Intermediário"
+      },
+      "NOSQL": {
+        "NAME": "NoSql",
+        "LEVEL": "Intermediário"
+      },
+      "REACT": {
+        "NAME": "React",
+        "LEVEL": "Intermediário"
+      }
+    },
+    "FOOTER": {
+        "COPYRIGHT": "2023 Romano M. Stedile. Todos os direitos reservados."
+      }
+}

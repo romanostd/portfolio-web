@@ -1,44 +1,42 @@
 export const technologies = [
   {
-    name: 'Angular',
-    level: 'Expert',
+    name: 'TECHNOLOGIES.ANGULAR.NAME',
+    level: 'TECHNOLOGIES.ANGULAR.LEVEL',
     progress: 100,
   },
   {
-    name: 'Node.js',
-    level: 'Expert',
+    name: 'TECHNOLOGIES.NODE_JS.NAME',
+    level: 'TECHNOLOGIES.NODE_JS.LEVEL',
     progress: 100,
   },
   {
-    name: 'Typescript',
-    level: 'Advanced',
+    name: 'TECHNOLOGIES.TYPESCRIPT.NAME',
+    level: 'TECHNOLOGIES.TYPESCRIPT.LEVEL',
     progress: 90,
   },
-
   {
-    name: 'Relacional DB',
-    level: 'Advanced',
+    name: 'TECHNOLOGIES.RELATIONAL_DB.NAME',
+    level: 'TECHNOLOGIES.RELATIONAL_DB.LEVEL',
     progress: 80,
   },
   {
-    name: 'Tests',
-    level: 'Advanced',
+    name: 'TECHNOLOGIES.TESTS.NAME',
+    level: 'TECHNOLOGIES.TESTS.LEVEL',
     progress: 70,
   },
   {
-    name: 'DevOps',
-    level: 'Intermediate',
+    name: 'TECHNOLOGIES.DEVOPS.NAME',
+    level: 'TECHNOLOGIES.DEVOPS.LEVEL',
     progress: 50,
   },
   {
-    name: 'NoSql',
-    level: 'Intermediate',
+    name: 'TECHNOLOGIES.NOSQL.NAME',
+    level: 'TECHNOLOGIES.NOSQL.LEVEL',
     progress: 50,
   },
   {
-    name: 'React',
-    level: 'Intermediate',
+    name: 'TECHNOLOGIES.REACT.NAME',
+    level: 'TECHNOLOGIES.REACT.LEVEL',
     progress: 50,
-  },
-
+  }
 ];

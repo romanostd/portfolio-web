@@ -1,4 +1,9 @@
-<app-side-menu [isOpen]="isSidebarOpen"></app-side-menu>
+<app-side-menu
+  [isOpen]="isSidebarOpen"
+  [currentLang]="currentLang"
+  (languageChange)="onLanguageChange($event)"
+></app-side-menu>
+
 <div class="modal" *ngIf="selectedProject">
   <div class="modal-content">
     <app-project-modal
@@ -28,16 +33,30 @@
     </label>
 
     <nav class="hidden md:flex space-x-4">
-      <a href="#projects" class="nav-link text-white">Projects</a>
-      <a href="#technologies" class="nav-link text-white">Technologies</a>
-      <a href="#about-me" class="nav-link text-white">About me</a>
+      <a
+        href="#projects"
+        class="nav-link text-white"
+        translate="HEADER.PROJECTS"
+      ></a>
+      <a
+        href="#technologies"
+        class="nav-link text-white"
+        translate="HEADER.TECHNOLOGIES"
+      ></a>
+      <a
+        href="#about-me"
+        class="nav-link text-white"
+        translate="HEADER.ABOUT_ME"
+      ></a>
     </nav>
     <div class="hidden md:flex space-x-4">
       <label class="switch">
-        <input type="checkbox" />
+        <input type="checkbox" (change)="onLanguageChange($event)" />
         <span class="slider"></span>
       </label>
-      <span href="#" class="text-white"> EN-US </span>
+      <span class="text-white">{{
+        currentLang === "en" ? "EN-US" : "PT-BR"
+      }}</span>
     </div>
   </header>
 
@@ -50,12 +69,7 @@
         <div
           class="pt-10 text-white max-w-[850px] mx-auto text-xl md:text-3xl color-pink"
         >
-          Hi there! I'm Romano, a web developer for over 5 years, graduated in
-          systems analysis and development and postgraduate in full stack
-          development, I'm currently a software engineer at Senior Systems, the
-          5th largest software company in Brazil. I really enjoy developing
-          smart and modern solutions with an intuitive and interactive design.
-          Feel free to contact me using one of the options below:
+          {{ "PRESENTATION.ABOUT" | translate }}
         </div>
         <div class="flex space-x-5 py-4">
           <a
@@ -95,15 +109,17 @@
       <img
         src="../assets/drawing.svg"
         alt="Pattern"
-        class="absolute right-36 top-96 transform translate-x-1/2 -translate-y-1/2"
+        class="absolute right-32 top-96 transform translate-x-1/2 -translate-y-1/2"
       />
     </div>
     <a href="#projects" class="arrow-down" aria-label="Go to next section">
       <i class="fas fa-chevron-down text-white"></i>
     </a>
   </section>
-  <section id="projects" class="container mx-auto px-4 py-20">
-    <h2 class="text-3xl text-white font-bold mb-20">Projects</h2>
+  <section id="projects" class="container mx-auto px-4 py-32">
+    <h2 class="text-3xl text-white font-bold mb-20">
+      {{ "HEADER.PROJECTS" | translate }}
+    </h2>
 
     <div class="grid md:grid-cols-2 gap-40">
       <div class="projects-card p-4" *ngFor="let project of projects">
@@ -111,31 +127,34 @@
           <img
             class="border-radius"
             [src]="project.images[0]"
-            [alt]="project.title"
+            [alt]="project.title | translate"
           />
         </div>
         <div class="p-6">
           <h3 class="text-center text-white text-3xl font-semibold">
-            {{ project.title }}
+            {{ project.title | translate }}
           </h3>
           <div class="mt-2 w-1/2 mx-auto h-1 project-title-border"></div>
           <p class="text-white my-5">
-            {{ project.description }}
+            {{ project.description | translate }}
           </p>
           <button class="main-button w-52 h-14" (click)="openModal(project)">
-            View more
+            {{ "BUTTONS.VIEW_MORE" | translate }}
           </button>
         </div>
       </div>
     </div>
   </section>
-  <section id="technologies" class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl text-white font-bold mb-20">Technologies and Skills</h2>
+  <section id="technologies" class="container mx-auto px-4 py-40">
+    <h2
+      class="text-3xl text-white font-bold mb-20"
+      translate="TECHNOLOGIES.HEADER"
+    ></h2>
     <div class="space-y-4">
       <div *ngFor="let tech of techList">
         <div class="flex justify-between">
-          <div class="text-white">{{ tech.name }}</div>
-          <div class="text-white">{{ tech.level }}</div>
+          <div class="text-white" translate="{{ tech.name }}"></div>
+          <div class="text-white" translate="{{ tech.level }}"></div>
         </div>
 
         <div class="bg-gray-700 rounded-full h-2.5 dark:bg-gray-700">
@@ -147,8 +166,11 @@
       </div>
     </div>
   </section>
-  <section id="about-me" class="timeline-container container mx-auto px-4 py-8">
-    <h2 class="text-3xl text-white font-bold mb-20">About me</h2>
+  <section id="about-me" class="timeline-container container mx-auto px-4 py-36">
+    <h2
+      class="text-3xl text-white font-bold mb-20"
+      translate="TIMELINE.HEADER"
+    ></h2>
 
     <div
       class="timeline-navigation prev"
@@ -164,9 +186,12 @@
           class="timeline-item"
           *ngFor="let item of timelineItens; let i = index"
         >
-          <div class="timeline-date text-white">{{ item.date }}</div>
+          <div
+            class="timeline-date text-white"
+            translate="{{ item.date }}"
+          ></div>
           <div class="timeline-dot"></div>
-          <div class="timeline-content">{{ item.content }}</div>
+          <div class="timeline-content" translate="{{ item.content }}"></div>
         </div>
       </div>
       <div class="timeline-line"></div>
@@ -180,6 +205,7 @@
       &#10095;
     </div>
   </section>
+
   <div class="flex justify-center items-center my-4">
     <button class="button" (click)="scrollToTop()">
       <svg class="svgIcon" viewBox="0 0 384 512">
@@ -190,8 +216,6 @@
     </button>
   </div>
   <footer class="text-center py-4">
-    <p class="text-gray-400">
-      &copy; 2023 Romano M. Stedile. All Rights Reserved.
-    </p>
+    <p class="text-gray-400">&copy; {{ "FOOTER.COPYRIGHT" | translate }}</p>
   </footer>
 </div>
