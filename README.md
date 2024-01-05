@@ -1,27 +1,42 @@
-# PortfolioWeb
+# Romano Marcos Stedile's Web Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.0.
+Welcome to my personal web portfolio.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The portfolio is a showcase of various projects and professional details along with contact information. Built with Angular, this project adheres to the best practices in web development and search engine optimization (SEO).
+You can access the page here: http://romanostd.s3-website-us-east-1.amazonaws.com/
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Project Portfolio**: Features developed projects with images, descriptions, and links to the repositories.
+- **Technologies & Skills**: List of technologies and skills with a competency level depicted by a progress bar.
+- **Professional Timeline**: An interactive timeline highlighting the professional and academic journey.
+- **Contact & Social Links**: Direct links to LinkedIn, GitHub, email, and WhatsApp.
+- **Internationalization**: Support for English and Portuguese languages.
+- **Responsive Design**: Fully responsive for both mobile and desktop devices.
 
-## Build
+## Technologies Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular
+- Tailwind CSS
+- ngx-translate
+- AWS S3 for hosting
+- AWS CloudFront for content distribution
 
-## Running unit tests
+## Project Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To run this project locally, follow the instructions below:
 
-## Running end-to-end tests
+```bash
+# Clone the repository
+git clone https://github.com/romanostd/portfolio-web.git
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Navigate to the project directory
+cd portfolio-web
 
-## Further help
+# Install dependencies
+npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Run the development server
+ng serve
